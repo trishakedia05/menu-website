@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Flavors</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Café Flavors</h1>
+        <input type="text" id = "searchBar" placeholder="Search menu...">
+    </header>
+
+    <div class="categories">
+        <button class="category-btn active" data-category="all">All</button>
+        <button   class="category-btn" data-category="beverages">Beverages</button>
+        <button   class="category-btn" data-category="snacks">Snacks</button>
+        <button  class="category-btn"  data-category="sandwiches">Sandwiches</button>
+        <button  class="category-btn" data-category="salads">Salads</button>
+        <button  class="category-btn" data-category="pastas">Pastas</button>
+        <button  class="category-btn" data-category="main-course">Main Course</button>
+        <button  class="category-btn" data-category="desserts">Desserts</button>
+        <button   class="category-btn" data-category="combos">Combos</button>
+    </div>
+
+    <main class="menu"></main>
+
+    <div class="cart">
+        <span>Total:</span>
+        <span id="cartTotal">₹0</span>
+        <button class="cart-icon">Checkout</button>
+    </div>
+    <!-- Add this just before the closing </body> tag -->
+<div class="checkout-screen" id="checkoutScreen" style="display: none;">
+    <div class="checkout-content">
+        <div class="checkout-header">
+            <h2>Order Summary</h2>
+            <button class="close-checkout" id="closeCheckout">&times;</button>
+        </div>
+        <div class="checkout-items" id="checkoutItems">
+            <!-- Items will be populated here -->
+        </div>
+        <div class="checkout-total">
+            <div class="subtotal">
+                <span>Subtotal:</span>
+                <span id="checkoutSubtotal">₹0</span>
+            </div>
+            <div class="tax">
+                <span>Tax (5%):</span>
+                <span id="checkoutTax">₹0</span>
+            </div>
+            <div class="total">
+                <span>Total:</span>
+                <span id="checkoutTotal">₹0</span>
+            </div>
+        </div>
+        <button class="place-order-btn" id="placeOrderBtn">Place Order</button>
+    </div>
+</div>
+<style>
+    .checkout-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.checkout-content {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.close-checkout {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.checkout-items {
+    margin-bottom: 2rem;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-details {
+    flex-grow: 1;
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-btn {
+    background-color: #7b4c9e;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkout-total {
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+}
+
+.checkout-total > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+}
+
+.place-order-btn {
+    background-color: #7b4c9e;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.place-order-btn:hover {
+    background-color: #6a3b8d;
+}
+
+</style>
+    <script src="menu.js"></script>
+
+</body>
+</html>
